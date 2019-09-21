@@ -13,11 +13,11 @@
 
 
 ***更新日期：2019年8月25日 v9.98***    
-*优化：减少安全过滤误报  
-新增：强制使用CKplayer  
-新增：强制使用Dplayer  
-新增：Dplayer增加全屏连播，进度记忆，无缝上下集，p2p加速  
-新增：播放器参数parent.vid视频id  parent.vfrom当前播放器  parent.vpart当前集数*  
+*优化：减少安全过滤误报*  
+*新增：强制使用 CKplayer*  
+*新增：强制使用 Dplayer*  
+*新增：Dplayer增加全屏连播，进度记忆，无缝上下集，p2p加速*  
+*新增：播放器参数parent.vid视频id  parent.vfrom当前播放器  parent.vpart当前集数*  
 
 
 
@@ -41,7 +41,7 @@
 
 ===其他=== 
 ------------------------------------- 
-官方网站：https://www.seacms.net
+官方网站：https://seacms.net
 
 最新完整安装包：https://www.seacms.net/seacms.zip
 
