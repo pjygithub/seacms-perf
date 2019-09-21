@@ -295,9 +295,12 @@ else if($step==4)
 	$newadminname=randomkeys(6);
   	$jpath='../admin';
 	$xpath='../'.$newadminname;
-	$cadmin=rename($jpath,$xpath);
-	if($cadmin==true){$cadmininfo=$baseurl.'/'.$newadminname;}
-	else{$cadmininfo=$baseurl.'/admin';}
+	$cadmin=rename($jpath,$xpath);	
+	if($indexUrl=="/"){$cbaseurl=$baseurl;$ccbaseurl=$baseurl.'/';}
+	else{$cbaseurl=$baseurl.'/'.$indexUrl;$ccbaseurl=$baseurl.'/'.$indexUrl;}
+
+	if($cadmin==true){$cadmininfo=$ccbaseurl.$newadminname;}
+	else{$cadmininfo=$ccbaseurl.'admin';}
 	
 	include('./templates/step-5.html');
   	exit();
