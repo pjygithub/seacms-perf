@@ -3,13 +3,13 @@
 		<div class="row">
 			<div class="myui-header_bd clearfix">					
 			    <div class="myui-header__logo">			    	
-					<a class="logo" href="/">
+					<a class="logo" href="{seacms:indexlink}">
 						<img class="img-responsive hidden-xs" src="images/logo.png"/>
 						<img class="img-responsive visible-xs" src="images/logo.png"/>
 					</a>					
 				</div>
 				<ul class="myui-header__menu nav-menu">
-					<li class="  hidden-sm hidden-xs"><a href="/">首页</a></li>
+					<li class="  hidden-sm hidden-xs"><a href="{seacms:indexlink}">首页</a></li>
 {seacms:menulist type=top}<li class=" {if:[menulist:typeid]={seacms:currenttypeid}}active{elseif:[menulist:typeid]={playpage:upid}}active{end if} hidden-sm hidden-xs"><a href="[menulist:link]">[menulist:typename]</a></li>{/seacms:menulist}
 					<li class="active hidden-sm hidden-xs"><a href="{seacms:newslink}">资讯</a></li>
 					<li class="hidden-sm hidden-xs"><a href="{seacms:topiclink}">专题</a></li>
@@ -17,7 +17,7 @@
 						<a href="javascript:;">频道 <i class="fa fa-angle-down"></i></a>
 						<div class="dropdown-box bottom fadeInDown clearfix">
 							<ul class="item nav-list clearfix">
-						                                                                      <li class="col-lg-5 col-md-5 col-sm-5 col-xs-3"><a class="btn btn-sm btn-block btn-default" href="/">首页</a></li>
+						                                                                      <li class="col-lg-5 col-md-5 col-sm-5 col-xs-3"><a class="btn btn-sm btn-block btn-default" href="{seacms:indexlink}">首页</a></li>
 {seacms:menulist type=top}{seacms:smallmenulist type=[menulist:typeid]}<li class="col-lg-5 col-md-5 col-sm-5 col-xs-3"><a class="btn btn-sm btn-block btn-{if:[smallmenulist:typeid]={seacms:currenttypeid}}warm{elseif:[smallmenulist:typeid]={playpage:upid}}warm{end if}" href="[smallmenulist:link]">[smallmenulist:typename]</a></li>{/seacms:smallmenulist}{/seacms:menulist}
 						                                                                      <li class="col-lg-5 col-md-5 col-sm-5 col-xs-3"><a class="btn btn-sm btn-block btn-default" href="{seacms:topiclink}">专题</a></li>
 						                                                                      <li class="col-lg-5 col-md-5 col-sm-5 col-xs-3"><a class="btn btn-sm btn-block btn-warm" href="{seacms:newslink}">资讯</a></li>
@@ -32,13 +32,13 @@
 						<span class="text">视频</span> <i class="fa fa-caret-down"></i>
 						<div class="dropdown-box bottom fadeInDown">
 							<ul class="item">
-								<li class="vod" data-action="/search.php">视频</li>
-								<li class="news" data-action="/so.php">资讯</li>
+								<li class="vod" data-action="{seacms:indexlink}/search.php">视频</li>
+								<li class="news" data-action="{seacms:indexlink}/so.php">资讯</li>
 							</ul>
 						</div>
 					</a>
 					
-								        <form id="search" name="search" method="get" action="/search.php" onSubmit="return qrsearch();">
+								        <form id="search" name="search" method="get" action="{seacms:indexlink}/search.php" onSubmit="return qrsearch();">
     					<input type="text" id="wd" name="searchword" class="search_wd form-control" value="" placeholder="输入影片关键词..." autocomplete="off" style=" padding-left: 72px; "/>
 						<button class="submit search_submit" id="searchbutton" type="submit" name="submit"><i class="fa fa-search"></i></button>							
 					</form>
@@ -82,8 +82,8 @@
 						</div>	
 					</li>
 	
-					<li><a href="/gbook.php" title="留言反馈"><i class="fa fa-commenting"></i></a></li>					<li>
-						<a href="/member.php"><i class="fa fa-user"></i></a>
+					<li><a href="{seacms:indexlink}/gbook.php" title="留言反馈"><i class="fa fa-commenting"></i></a></li>					<li>
+						<a href="{seacms:indexlink}/member.php"><i class="fa fa-user"></i></a>
 					</li>
 									</ul>
 		  	</div>		

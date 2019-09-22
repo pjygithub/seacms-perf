@@ -37,7 +37,7 @@
     <td colspan="3" height="90"><div class="header">
         <div class="logo" onClick="window.open('../');" style="cursor:pointer;">后台管理中心 - Power By SeaCMS</div>
         <div class="pannel">
-          <p>您好<em><?php echo $cuserLogin->getUserName(); ?></em>(
+          <p>您好, <em><?php echo $cuserLogin->getUserName(); ?></em>(
             <?php
         if($cuserLogin->getUserRank()==1) {
         	echo "系统管理员";

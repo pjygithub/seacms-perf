@@ -1703,7 +1703,7 @@ function makeRss()
 					<docs>".$GLOBALS['cfg_webname']."</docs>\n
 					<generator>Rss Powered By ".$GLOBALS['cfg_basehost']."</generator>\n
 					<image>\n
-						<url>".$GLOBALS['cfg_basehost']."/pic/logo.gif</url>\n
+						<url>".$GLOBALS['cfg_basehost']."./../pic/logo.gif</url>\n
 					</image>\n";
 		while($row=$dsql->GetObject('makeRss'))
 		{

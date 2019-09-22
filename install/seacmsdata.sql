@@ -4,7 +4,7 @@
 (4, 100, '高级会员', 5, 800, 500, '');
 
 INSERT INTO `sea_mytag` VALUES('1','areasearch','地区搜索','1251590919','<a href=\'/{seacms:sitepath}search.php?searchtype=2&searchword=大陆\' target=\"_blank\">大陆</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=2&searchword=香港\'target=\"_blank\">香港</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=2&searchword=台湾\'target=\"_blank\">台湾</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=2&searchword=日本\' target=\"_blank\">日本</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=2&searchword=韩国\' target=\"_blank\">韩国</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=2&searchword=欧美\' target=\"_blank\">欧美</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=2&searchword=其它\' target=\"_blank\">其它</a>');
-INSERT INTO `sea_mytag` VALUES('2','yearsearch','按发行年份查看电影','1251509338','<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2009\' target=\"_blank\">2009</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2008\'target=\"_blank\">2008</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2007\' target=\"_blank\">2007</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2006\' target=\"_blank\">2006</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2005\' target=\"_blank\">2005</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2004\' target=\"_blank\">2004</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2003\' target=\"_blank\">2003</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2002\' target=\"_blank\">2002</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2001\' target=\"_blank\">2001</a>');
+INSERT INTO `sea_mytag` VALUES('2','yearsearch','按发行年份查看电影','1251509338','<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2019\' target=\"_blank\">2019</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2018\'target=\"_blank\">2018</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2017\' target=\"_blank\">2017</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2016\' target=\"_blank\">2016</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2015\' target=\"_blank\">2015</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2014\' target=\"_blank\">2014</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2013\' target=\"_blank\">2013</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2012\' target=\"_blank\">2012</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=3&searchword=2011o\' target=\"_blank\">2011以前</a>');
 INSERT INTO `sea_mytag` VALUES('3','actorsearch','演员名字','1251590973','<a href=\'/{seacms:sitepath}search.php?searchtype=1&searchword=成龙\' target=\"_blank\">成龙</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=1&searchword=周星驰\'target=\"_blank\">周星驰</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=1&searchword=周润发\'target=\"_blank\">周润发</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=1&searchword=舒淇\' target=\"_blank\">舒淇</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=1&searchword=葛优\' target=\"_blank\">葛优</a> \r\n<a href=\'/{seacms:sitepath}search.php?searchtype=1&searchword=周杰伦\' target=\"_blank\">周杰伦</a> ');
 INSERT INTO `sea_mytag` VALUES('4','nav_bottom_banner','导航栏下方通栏广告','1251591021','aaaaaaaaaaaaaaaaaaaaaa\r\n$$$\r\nbbbbbbbbbbbbbbbbbbbbbb\r\n$$$\r\neeeeeeeeeeeeeeeeeeeeee');
 
@@ -62,19 +62,18 @@ INSERT INTO `sea_jqtype` (`tid`,`upid`, `tname`, `ishidden`) VALUES
 (2,0, '乡村', 0),
 (3,0,'都市', 0),
 (4,0, '少儿', 0),
-(5,0, '对话', 0),
-(6,1, '搞笑', 0),
-(7,1, '恐怖', 0),
-(8,1, '宫廷', 0),
-(9,1, '剧情', 0),
-(10,2, '言情', 0),
-(11,2, '家庭', 0),
-(12,2, '励志', 0),
-(13,2, '偶像', 0),
-(14,2, '时装', 0),
-(15,3, '年代', 0),
-(16,3, '悬疑', 0),
-(17,3, '古装', 0),
-(18,4, '热血', 0),
-(19,4, '同人', 0),
-(20,4, '耽美', 0);
+(5,1, '搞笑', 0),
+(6,1, '恐怖', 0),
+(7,1, '宫廷', 0),
+(8,1, '剧情', 0),
+(9,2, '言情', 0),
+(10,2, '家庭', 0),
+(11,2, '励志', 0),
+(12,2, '偶像', 0),
+(13,2, '时装', 0),
+(14,3, '年代', 0),
+(15,3, '悬疑', 0),
+(16,3, '古装', 0),
+(17,4, '热血', 0),
+(18,4, '耽美', 0),
+(19,4, '同人', 0);
