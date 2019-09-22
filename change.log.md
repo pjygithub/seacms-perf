@@ -9,8 +9,8 @@
 2. 新建build.py文件，并全部输入新内容；
 3. 改变./install/templates/step-5.html:第37、38行：$baseurl--> $cbaseurl
 4. 改变./install/index.php的第295-303行：
-	'''
-	$newadminname=randomkeys(6);
+```
+	$ newadminname = randomkeys（6）;
   	$jpath='../admin';
 	$xpath='../'.$newadminname;
 	$cadmin=rename($jpath,$xpath);	
@@ -19,5 +19,5 @@
 
 	if($cadmin==true){$cadmininfo=$ccbaseurl.$newadminname;}
 	else{$cadmininfo=$ccbaseurl.'admin';}
-	'''
+```
 
