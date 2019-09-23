@@ -35,7 +35,7 @@
 <div class="b">
 	<div class="main">
 		<div class="head">
-			<div class="h_right"><a href="//www.seacms.net" target="_blank">官方网站</a><span>|</span><a href="//www.seacms.net" target="_blank">交流论坛</a></div>
+			<div class="h_right"><a href="//www.seacms.net" target="_blank">官方网站</a><span>|</span><a href="//www.seacms.net/index.php" target="_blank">交流论坛</a></div>
 			<img src="images/logo.png" />
 		</div>
 		<div class="cont">
@@ -67,9 +67,17 @@
 			<tr>
 				<td width="120">数据库名称：</td>
 				<td>
-					<input class="inp" name="dbname" id="dbname" type="text" value="<?php echo $dfDbname; ?>" tips="数据库名，如数据库已存在，将会被清空" />
-					</td>
+					<input class="inp" name="dbname" id="dbname" type="text" value="<?php echo $dfDbname; ?>" tips="数据库名，数字或字母，如数据库已存在，将会被清空！" />
+				<input type="radio" name="dbchange" id="isnew" value="isnew" checked>新建数据库 
+				<input type="radio" name="dbchange" id="isold" value="isold">
+				<font color=red>使用原数据库（必须准确填写数据库名）</font>
+					
+				</td>
 			</tr>
+			<tr>
+					<td width="120">数据库表前缀：</td>
+					<td><input class="inp" name="dbprefix" type="text" value="sea_" tips="不建议修改" disabled/></td>
+				</tr>
 			<tr>
 				<td width="120">数据库用户：</td>
 				<td><input class="inp" name="dbuser" id="dbuser" type="text" value="root" tips="数据库用户，强烈建议使用非root用户" /></td>
@@ -77,7 +85,7 @@
 			<tr>
 				<td width="120">数据库密码：</td>
 				<td>
-				  <div style='float:left;margin-right:3px;'><input class="inp" name="dbpwd" id="dbpwd" type="text"  tips="数据库用户的连接密码" /><input class="inp" name="dbprefix" type="hidden" value="sea_" /></div>
+				  <div style='float:left;margin-right:3px;'><input class="inp" name="dbpwd" id="dbpwd" type="text"  tips="数据库用户的连接密码" /></div>
 				  <div style='float:left' id='dbpwdsta'></div>
 				</td>
 			</tr>
@@ -109,7 +117,7 @@
 			</tr>
 			<tr>
 				<td width="120">密　码：</td>
-				<td><input id="adm_pass" class="inp" name="adminpwd" type="text" value="admin" tips="后台管理员密码" /></td>
+				<td><input id="adm_pass" class="inp" name="adminpwd" type="text" value="admin" tips="后台管理员密码，建议密码不小于8位数，使用数字、大小写字母、特殊字符的组合" /></td>
 			</tr>
 		</table>
 
@@ -136,7 +144,7 @@
 		</table>
 
 </div>
-<div class="button"><a href="javascript:document.form1.submit();">下一步</a> <a href="index.php?step=2">上一步</a></div>
+<div class="button"><a href="javascript:document.form1.submit();">开始安装</a> <a href="index.php?step=2">上一步</a></div>
 				</div>
 			</div>
 			<div class="c_btm"></div>

@@ -64,7 +64,7 @@ for i in range(0,len(list3)):
             os.remove(path33)            
             print ("成功删除文件："+path33+"\n")
         else:
-            print ("不能删除文件："+fileName3+format("（文件未被处理）","->30"))    
+            print ("不能删除文件："+fileName3+format("（文件未被处理）","->30"))
 print()
 print("-------------------------第四步-------------------------------------")
 print ("正在删除.\install\install_lock.txt......")

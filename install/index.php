@@ -176,6 +176,7 @@ else if($step==4)
 
   //common.inc.php
   $configStr1 = str_replace("~dbhost~",$dbhost,$configStr1);
+  $configStr1 = str_replace("~dbchange~",$dbchange,$configStr1);
 	$configStr1 = str_replace("~dbname~",$dbname,$configStr1);
 	$configStr1 = str_replace("~dbuser~",$dbuser,$configStr1);
 	$configStr1 = str_replace("~dbpwd~",$dbpwd,$configStr1);
@@ -210,9 +211,14 @@ else if($step==4)
 
   if($mysqlVersion >= 4.1)
   {
-  	$sql4tmp = "ENGINE=MyISAM DEFAULT CHARSET=".$dblang;
+	  $sql4tmp = "ENGINE=My
+	  ISAM DEFAULT CHARSET=".$dblang;
   }
   
+  // 判断是否重建数据库
+
+  if ($dbchange == 'isnew'){
+
   //创建数据表
   
   $query = '';
@@ -276,7 +282,11 @@ else if($step==4)
 	mysqli_query($conn,$flinkquery);
 
   mysqli_close($conn);
-
+  }else{
+	$adminquery = "UPDATE `{$dbprefix}admin` SET `name` = '$adminuser' , `password` = '".substr(md5($adminpwd),5,20)."' , `logincount` = 0, `loginip` = '127.0.0.1', `logintime` = '".time()."', `groupid` = 1, `state` = 1 where `id`=1";
+	mysqli_query($conn,$adminquery);
+	mysqli_close($conn);
+  }
   	//锁定安装程序
   	$fp = fopen($insLockfile,'w');
   	fwrite($fp,'ok');
@@ -298,10 +308,8 @@ else if($step==4)
 	$cadmin=rename($jpath,$xpath);	
 	if($indexUrl=="/"){$cbaseurl=$baseurl;$ccbaseurl=$baseurl.'/';}
 	else{$cbaseurl=$baseurl.'/'.$indexUrl;$ccbaseurl=$baseurl.'/'.$indexUrl;}
-
 	if($cadmin==true){$cadmininfo=$ccbaseurl.$newadminname;}
-	else{$cadmininfo=$ccbaseurl.'admin';}
-	
+	else{$cadmininfo=$ccbaseurl.'admin';}	
 	include('./templates/step-5.html');
   	exit();
 

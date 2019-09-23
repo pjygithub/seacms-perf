@@ -9,17 +9,11 @@
 
 - [X] 修复：采集未入库视频无法编辑
 
-- [X] 修复：留言板界面验证码输入效果
+- [X] 修复：留言板界面验证码输入效果  
 
+- [x] 新增：安装向导程序可以选择“新建数据库”和“使用原来已有的数据库”，重装更方便；
 
-***更新日期：2019年8月25日 v9.98***    
-*优化：减少安全过滤误报*  
-*新增：强制使用 CKplayer*  
-*新增：强制使用 Dplayer*  
-*新增：Dplayer增加全屏连播，进度记忆，无缝上下集，p2p加速*  
-*新增：播放器参数parent.vid视频id  parent.vfrom当前播放器  parent.vpart当前集数*  
-
-
+更多内容可查看<a href="https://github.com/pjygithub/seacms-perf/blob/master/change.log.md">历史更新</a>。
 
 ===升级方法=== 
 ------------------------------------- 
@@ -41,9 +35,11 @@
 
 ===其他=== 
 ------------------------------------- 
-官方网站：https://seacms.net
+官方网站：https://www.seacms.net
 
-最新完整安装包：https://www.seacms.net/seacms.zip
+交流论坛：https://www.seacms.net/index.php
+
+最新完整安装包：<a href="https://github.com/pjygithub/seacms-perf/releases/">最新发布</a>
 
 
 

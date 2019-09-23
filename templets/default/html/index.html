@@ -10,7 +10,14 @@
 	<body class="active">
  {seacms:top}
 <div id="home_slide" class="carousel slide clearfix" data-ride="carousel">
-	<div class="carousel-inner">
+	<div id="homea" class="carousel-inner" style="height:100%;width:100%">
+			<script>
+					var getWidth = window.innerWidth;
+					var iswidth = getWidth * 0.6 + 'px';					
+					var getDOM = document.getElementById('homea');
+					getDOM.style.cssText = "margin:0 auto;width:"+ iswidth;
+					
+					</script>
  {seacms:videolist type=all num=1 commend=5 order=time}
                        <div class="item text-center active" style="background-color: ;">
 			<a title="[videolist:name]" href="[videolist:link]">
