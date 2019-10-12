@@ -70,13 +70,13 @@
 					<input class="inp" name="dbname" id="dbname" type="text" value="<?php echo $dfDbname; ?>" tips="数据库名，数字或字母，如数据库已存在，将会被清空！" />
 				<input type="radio" name="dbchange" id="isnew" value="isnew" checked>新建数据库 
 				<input type="radio" name="dbchange" id="isold" value="isold">
-				<font color=red>使用原数据库（必须准确填写数据库名）</font>
+				<font color=red>使用原数据库（须准确填写数据库名）</font>
 					
 				</td>
 			</tr>
 			<tr>
 					<td width="120">数据库表前缀：</td>
-					<td><input class="inp" name="dbprefix" type="text" value="sea_" tips="不建议修改" disabled/></td>
+					<td><input class="inp" name="dbprefix" type="text" value="sea_" tips="不建议修改" readonly /></td>
 				</tr>
 			<tr>
 				<td width="120">数据库用户：</td>
@@ -85,7 +85,7 @@
 			<tr>
 				<td width="120">数据库密码：</td>
 				<td>
-				  <div style='float:left;margin-right:3px;'><input class="inp" name="dbpwd" id="dbpwd" type="text"  tips="数据库用户的连接密码" /></div>
+				  <div style='float:left;margin-right:3px;'><input class="inp" name="dbpwd" id="dbpwd" type="password"  tips="数据库用户的连接密码" /></div>
 				  <div style='float:left' id='dbpwdsta'></div>
 				</td>
 			</tr>

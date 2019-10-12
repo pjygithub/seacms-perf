@@ -17,6 +17,7 @@ print()
 file10 = os.path.join(basepath,'data','common.inc.php')
 file11 = os.path.join(basepath,'data','config.cache.bak.php')
 file12 = os.path.join(basepath,'data','config.cache.inc.php')
+file13 = os.path.join(basepath,'data','cache','all_group.php')
 if os.path.exists(file10):
     os.remove(file10)
     print ("操作成功：common.inc.php")
@@ -32,6 +33,11 @@ if os.path.exists(file12):
     print ("操作成功：config.cache.inc.php")
 else:
     print ("不存在文件："+file12)
+if os.path.exists(file13):
+    os.remove(file13)
+    print ("操作成功：all_group.php")
+else:
+    print ("不存在文件："+file13)
 print()
 
 print("-------------------------第二步-------------------------------")
@@ -99,12 +105,16 @@ arrdir= []
 arrfind = ['.git', 'article', 'articlelist', 'comment', 'data', 'detail', \
             'include', 'install', 'js', 'list', 'news', 'pic', \
             'templets', 'topic', 'topiclist', 'uploads', 'video', 'weixin',
-            '文档','.vscode']
+            '文档','.vscode','videosup','member']
 for x in os.listdir('.'):
     if os.path.isdir(x):
         arrdir.append(x)
 print("正在查找要处理的管理目录......")
 print()
+
+if "xml" in arrdir:
+    arrfind.append('xml')
+
 founddir = list(set(arrdir).difference(set(arrfind)))
 foundstr = ",".join(founddir)
 dir60 = os.path.join(basepath,foundstr)
@@ -115,10 +125,34 @@ print("正在试图重命名管理目录......")
 print()
 dir61 = os.path.join(basepath,'admin')
 if os.path.exists(dir61):
-    print ("已经存在名“admin”的文件夹")
+    print ("已经存在名为“admin”的文件夹")
 else:
     os.rename(dir60,dir61)
     print ("文件夹重命名成功\r\n")
+
+print()
+print ("-------------------------第七步-----------------------------------")
+arrfile=[]
+for j in os.listdir('.'):
+    if os.path.isfile(j):
+        arrfile.append(j)
+arrfound=['allmovie.html','index.html','js.js']
+for k in arrfound:
+    if k in arrfile:
+        delfile = os.path.join(basepath,k)
+        os.remove(delfile)
+        print ("删除文件："+delfile+"成功")
+    else:
+        print("文件不存在："+k)
+arrxml = []
+if 'xml' in os.listdir('.'):
+    pathxml = os.path.join(basepath,'xml')
+    for l in os.listdir(pathxml):
+        pathl = os.path.join(pathxml,l)
+        if os.path.isfile(pathl):
+            os.remove(pathl)
+            print("成功删除文件："+pathl)
+    os.remove(pathxml)
 
 print()
 print("--------------------------完成！--------------------------------------")

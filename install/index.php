@@ -100,7 +100,8 @@ else if($step==2)
 		'/admin/ebak/zip',
 		'/js',
 		'/js/player',
-		'/js/ads'
+		'/js/ads',
+		'/videosup'
         
    );
 	 include('./templates/step-2.html');

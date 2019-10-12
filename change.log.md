@@ -1,3 +1,16 @@
+#### 时间：2019年10月12日
+###### 要点：
+- [x] 修复部分已知bug；
+- [ ] 用户投稿中心视频上传（未完成）；
+
+###### 细节：
+1. admin\img\style.css
+2. admin\templets\admin_video_edit.htm
+3. admin\templets\admin_video.htm
+4. add dir /videosup/
+5. add dir /member/
+
+
 #### 时间：2019年9月22日
 ###### 要点：
 - [x] 修复：非域名根目录安装时，默认模板访问不正常的一些问题；
@@ -24,8 +37,8 @@
 - [x] 优化：安装结果页非根目录安装的显示效果；
 
 ###### 细节：
-1. 新建change.md文件，并全部输入新内容；
-2. 新建build.py文件，并全部输入新内容；
+1. 新建change.log.md文件，记录更新日志；
+2. 新建build.py文件，便于初始化部署文件；
 3. 改变./install/templates/step-5.html:第37、38行：$baseurl--> $cbaseurl
 4. 改变./install/index.php的第295-303行：
 ```
@@ -62,5 +75,9 @@
 
 ###### 细节：
 
+无。
+
 #### 时间：2019年8月25日之前
+
 累计更新
+

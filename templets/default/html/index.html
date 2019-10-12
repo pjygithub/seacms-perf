@@ -10,14 +10,22 @@
 	<body class="active">
  {seacms:top}
 <div id="home_slide" class="carousel slide clearfix" data-ride="carousel">
-	<div id="homea" class="carousel-inner" style="height:100%;width:100%">
-			<script>
-					var getWidth = window.innerWidth;
-					var iswidth = getWidth * 0.6 + 'px';					
-					var getDOM = document.getElementById('homea');
-					getDOM.style.cssText = "margin:0 auto;width:"+ iswidth;
-					
-					</script>
+	<style>
+		@media screen and (min-width: 767px){ /* 判断当网页屏幕显示分辨率大于767px时样式修改为 */
+			.carousel-inner{
+				width: 100%; /* 宽度 */
+				height: 520px; /* 高度 */
+				overflow-y: hidden; /* y轴超出隐藏 */
+			}
+			.item.text-center{
+				width:84%;
+				height: 100%;
+				margin:0 auto;
+				/* transform: scale(0.6);缩放为0.倍大小 */
+			}
+		}
+	</style>
+	<div id="homea" class="carousel-inner">
  {seacms:videolist type=all num=1 commend=5 order=time}
                        <div class="item text-center active" style="background-color: ;">
 			<a title="[videolist:name]" href="[videolist:link]">

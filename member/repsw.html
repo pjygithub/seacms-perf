@@ -1,0 +1,56 @@
+<body>
+	<div class="hy-head-menu">
+		<div class="container">
+		    <div class="row">
+			  	<div class="item">
+				    <div class="logo hidden-xs">
+						<a class="hidden-sm hidden-xs" href="index.php"><img src="pic/member/logo.png" /></a>
+			  			<a class="visible-sm visible-xs" href="index.php"><img src="pic/member/logo_min.png" /></a>											  
+					</div>						
+					<div class="search hidden-xs"> 
+				        <form name="formsearch" id="formsearch" action='search.php' method="post" autocomplete="off">																			
+							<input class="form-control" placeholder="输入影片关键词..." name="searchword" type="text" id="keyword" required="">
+							<input type="submit" id="searchbutton" value="" class="hide">
+							<a href="javascript:" class="btns" title="搜索" onClick="$('#formsearch').submit();"><i class="icon iconfont icon-search"></i></a>
+						</form>
+				    </div>			   
+													 
+			  	</div>							
+		    </div>
+		</div>
+	</div>
+	<div class="container">
+	    <div class="row">
+	    	<div class="hy-member-user hy-layout clearfix">
+    			<div class="item">
+    				
+    				<dl class="margin-0 clearfix">
+    					<dt><span class="user"></span></dt>
+    					<dd>
+    						<span class="name">正在找回您的密码<span>
+    						<span class="group">通过电子邮箱找回您的密码<span>
+    					</dd>
+    			   </dl>   				
+    			</div>
+	    	</div>	    	
+		    <div class="hy-member hy-layout clearfix">
+		    	
+				
+				<form action="?mod=repsw2" method="post"><li class="cckkey"><span class="text-muted"><strong>系统会发送重置密码链接到您的注册邮箱<br>输入会员账号：</strong><br></span><input type="text" name="repswname" class="form-control" id="repswname" placeholder="输入会员账号" style="width:250px;"> <br><input type="submit" name="cckb" id="cckb" value="找回密码" class="btn btn-warning"></li></form>
+		    	               
+		    </div>
+		   
+	    </div>
+	</div>
+	<div class="tabbar visible-xs">
+		<a href="./" class="item">返回首页</a>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="hy-footer clearfix">
+				
+				<p class="text-muted">Copyright ©{$year} {$_SERVER['HTTP_HOST']}</p>
+			</div>
+		</div>
+	</div>	
+</body>

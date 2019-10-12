@@ -194,11 +194,11 @@
 			<textarea id="editor_id" name="v_content" style="width:700px;height:300px;"></textarea>
 			</td>
           </tr>
-          <tr>
+          <tr style="width:100%;position:fixed;bottom:0%;left:0%;background-color:rgba(242, 249, 253, 1)">
             <td height="40" colspan="2" align="left" class="td_border">&nbsp;
               <input type="submit" name="Submit" value="确定提交" class="rb1" onClick="if($('v_name').value.length==0){alert('请填写名称');return false;};if($('v_type').value.length==0){alert('请选择分类');return false;}"/>
               &nbsp;&nbsp;
-              <input type="reset" name="reset" value="清除重置" class="rb1"/>&nbsp;&nbsp;<input type="checkbox" value="1" name="ping" class="checkbox">百度推送新增</td>
+              <input type="reset" name="reset" value="清除重置" class="rb1"/>&nbsp;&nbsp;<input type="checkbox" value="1" name="ping" class="checkbox" checked>百度推送新增</td>
           </tr>
         </table>
       </form>

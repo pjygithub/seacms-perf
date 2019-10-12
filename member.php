@@ -1,25 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html xmlns="http://www.w3.org/1999/xhtml"> 
-<head>
-<title>会员中心</title> 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="robots" content="noindex,nofollow" />
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link href="pic/member/bootstrap.min.css" rel="stylesheet" type="text/css" />				
-<link href="pic/member/swiper.min.css" rel="stylesheet" type="text/css" >		
-<link href="pic/member/iconfont.css" rel="stylesheet" type="text/css" />
-<link href="pic/member/color.css" rel="stylesheet" type="text/css" />
-<link href="pic/member/style.min.css" rel="stylesheet" type="text/css" />
-<script src="pic/member/jquery.min.js"></script>
-<script type="text/javascript" src="pic/member/bootstrap.min.js"></script>
-</head>
 <?php
+include_once('./member/header.html');
 session_start();
 require_once("include/common.php");
 require_once(sea_INC.'/main.class.php');
@@ -42,70 +22,14 @@ if($mod=='activate'){
 	showMsg("恭喜，账户激活成功！","login.php",0,3000);exit();
 }
 
-
 //找回密码
 if($mod=='repsw'){
 	require_once('data/admin/smtp.php');
 	if($smtppsw=='off'){showMsg("抱歉，系统已关闭密码找回功能！","index.php",0,100000);exit();}
 	echo <<<EOT
-	        
-<body>
-	<div class="hy-head-menu">
-		<div class="container">
-		    <div class="row">
-			  	<div class="item">
-				    <div class="logo hidden-xs">
-						<a class="hidden-sm hidden-xs" href="index.php"><img src="pic/member/logo.png" /></a>
-			  			<a class="visible-sm visible-xs" href="index.php"><img src="pic/member/logo_min.png" /></a>											  
-					</div>						
-					<div class="search hidden-xs"> 
-				        <form name="formsearch" id="formsearch" action='search.php' method="post" autocomplete="off">																			
-							<input class="form-control" placeholder="输入影片关键词..." name="searchword" type="text" id="keyword" required="">
-							<input type="submit" id="searchbutton" value="" class="hide">
-							<a href="javascript:" class="btns" title="搜索" onClick="$('#formsearch').submit();"><i class="icon iconfont icon-search"></i></a>
-						</form>
-				    </div>			   
-													 
-			  	</div>							
-		    </div>
-		</div>
-	</div>
-	<div class="container">
-	    <div class="row">
-	    	<div class="hy-member-user hy-layout clearfix">
-    			<div class="item">
-    				
-    				<dl class="margin-0 clearfix">
-    					<dt><span class="user"></span></dt>
-    					<dd>
-    						<span class="name">正在找回您的密码<span>
-    						<span class="group">通过电子邮箱找回您的密码<span>
-    					</dd>
-    			   </dl>   				
-    			</div>
-	    	</div>	    	
-		    <div class="hy-member hy-layout clearfix">
-		    	
-				
-				<form action="?mod=repsw2" method="post"><li class="cckkey"><span class="text-muted"><strong>系统会发送重置密码链接到您的注册邮箱<br>输入会员账号：</strong><br></span><input type="text" name="repswname" class="form-control" id="repswname" placeholder="输入会员账号" style="width:250px;"> <br><input type="submit" name="cckb" id="cckb" value="找回密码" class="btn btn-warning"></li></form>
-		    	               
-		    </div>
-		   
-	    </div>
-	</div>
-	<div class="tabbar visible-xs">
-		<a href="/" class="item">返回首页</a>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="hy-footer clearfix">
-				
-				<p class="text-muted">Copyright ©{$year} {$_SERVER['HTTP_HOST']}</p>
-			</div>
-		</div>
-	</div>	
-</body>
+
 EOT;
+include_once('./member/repsw.html');
 	exit();
 }
 
@@ -190,64 +114,9 @@ if($mod=='repsw3'){
 
 	if($repswcode != $repswcode2){showMsg("授权码错误或已过期！","index.php",0,100000);exit();}
 	echo <<<EOT
-	        
-<body>
-	<div class="hy-head-menu">
-		<div class="container">
-		    <div class="row">
-			  	<div class="item">
-				    <div class="logo hidden-xs">
-						<a class="hidden-sm hidden-xs" href="index.php"><img src="pic/member/logo.png" /></a>
-			  			<a class="visible-sm visible-xs" href="index.php"><img src="pic/member/logo_min.png" /></a>											  
-					</div>						
-					<div class="search hidden-xs"> 
-				        <form name="formsearch" id="formsearch" action='search.php' method="post" autocomplete="off">																			
-							<input class="form-control" placeholder="输入影片关键词..." name="searchword" type="text" id="keyword" required="">
-							<input type="submit" id="searchbutton" value="" class="hide">
-							<a href="javascript:" class="btns" title="搜索" onClick="$('#formsearch').submit();"><i class="icon iconfont icon-search"></i></a>
-						</form>
-				    </div>			   
-													 
-			  	</div>							
-		    </div>
-		</div>
-	</div>
-	<div class="container">
-	    <div class="row">
-	    	<div class="hy-member-user hy-layout clearfix">
-    			<div class="item">
-    				
-    				<dl class="margin-0 clearfix">
-    					<dt><span class="user"></span></dt>
-    					<dd>
-    						<span class="name">正在找回您的密码<span>
-    						<span class="group">通过电子邮箱找回您的密码<span>
-    					</dd>
-    			   </dl>   				
-    			</div>
-	    	</div>	    	
-		    <div class="hy-member hy-layout clearfix">
-		    	
-				
-				<form action="?mod=repsw4" method="post"><li class="cckkey"><strong>会员账号：{$repswname}</strong><br><br>新密码：<br></span><input type="password" name="repswnew1" class="form-control" id="repswnew1" value="" style="width:250px;"><br>确认新密码：<br></span><input type="password" name="repswnew2" class="form-control" id="repswnew2" value="" style="width:250px;"> <br><input type="hidden" name="repswname" id="repswname" value="{$repswname}"><input type="hidden" name="repswcode" id="repswcode" value="{$repswcode}"><input type="submit" name="cckb" id="cckb" value="提交" class="btn btn-warning"></li></form>
-		    	               
-		    </div>
-
-	    </div>
-	</div>
-	<div class="tabbar visible-xs">
-<a href="/" class="item">返回首页</a>	
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="hy-footer clearfix">
-				
-				<p class="text-muted">Copyright ©{$year} {$_SERVER['HTTP_HOST']}</p>
-			</div>
-		</div>
-	</div>	
-</body>
+       
 EOT;
+include_once('./member/repsw3.html');
 	exit();
 }
 
@@ -492,15 +361,16 @@ if(empty($msgbody) OR $msgbody =="" OR $msgstate=='y'){$notify4css='display:none
 {$msgbody}&nbsp;&nbsp;<a href="?action=delmsg"><i class="icon iconfont icon-delete" style="color:#888;"><font style="font-size:12px;">不再显示</font></i></a>
 </div>   	
 		    <div class="hy-member hy-layout clearfix" style="margin-top:5px;">
-		    	<div class="hy-switch-tabs">
-					<ul class="nav nav-tabs">
-						<a class="text-muted pull-right hidden-xs" href="exit.php"><i class="icon iconfont icon-setting"></i> 退出账户</a>
-						<li class="active"><a href="?action=cc" title="播放线路">基本资料</a></li>							
-						<li><a href="?action=favorite"title="我的收藏">我的收藏</a></li>							
-						<li><a href="?action=buy" title="购买记录">购买记录</a></li>
-						<li><a href="/" title="返回首页">返回首页</a></li>						
-					</ul>
-				</div>
+			<div class="hy-switch-tabs">
+			<ul class="nav nav-tabs">
+				<a class="text-muted pull-right hidden-xs" href="exit.php"><i class="icon iconfont icon-setting"></i> 退出账户</a>
+				<li class="active"><a href="?action=cc" title="基本资料">基本资料</a></li>							
+				<li><a href="?action=favorite"title="我的收藏">我的收藏</a></li>							
+				<li><a href="?action=buy" title="购买记录">购买记录</a></li>
+				<li><a href="?action=videoUpload" title="投稿中心">投稿中心</a></li>		
+				<li><a href="./" title="返回首页">返回首页</a></li>	
+			</ul>
+		</div>
 		    	<div class="tab-content">
 					<div class="tab-pane fade in active">
 						<div class="col-md-9 col-sm-12 col-xs-12">					
@@ -524,7 +394,10 @@ EOT;
 							}
 								echo
 			                     "<li><span class=\"text-muted\">当前积分：</span>{$ccjifen} {$cfg_pointsname}</li>".
-			                     "<li><span class=\"text-muted\">推广链接：</span>{$_SERVER['HTTP_HOST']}/i.php?uid={$_SESSION['sea_user_id']}</li>".
+								 "<li><span class=\"text-muted\">推广链接：</span>";
+								 echo $_SERVER['HTTP_HOST'];
+								 echo substr($_SERVER['PHP_SELF'],0,-11);
+								 echo "/i.php?uid={$_SESSION['sea_user_id']}</li>".
 			                    "<form action=\"?action=cz\" method=\"post\"><li class=\"cckkey\"><span class=\"text-muted\">充值积分：</span><input type=text name=cckkey class=\"form-control\" id=cckkey placeholder=\"输入充值卡卡号\" > <input type=submit name=cckb id=cckb value='充值{$cfg_pointsname}' class=\"btn btn-warning\"></li></form></div>";
 			echo <<<EOT
 												
@@ -558,7 +431,7 @@ EOT;
 	    </div>
 	</div>
 	<div class="tabbar visible-xs">
-		<a href="/" class="item">返回首页</a>			
+		<a href="./" class="item">返回首页</a>			
 	</div>
 	<div class="container">
 		<div class="row">
@@ -623,15 +496,16 @@ elseif($action=='favorite')
 	<div class="container">
 	    <div class="row">	    	
 	    	<div class="hy-member  hy-layout clearfix">
-	    		<div class="hy-switch-tabs">
-					<ul class="nav nav-tabs">
-						<a class="text-muted pull-right hidden-xs" href="exit.php"><i class="icon iconfont icon-setting"></i> 退出账户</a>
-						<li><a href="?action=cc" title="播放线路">基本资料</a></li>							
-						<li class="active"><a href="?action=favorite"title="我的收藏">我的收藏</a></li>							
-						<li><a href="?action=buy" title="购买记录">购买记录</a></li>
-						<li><a href="/" title="返回首页">返回首页</a></li>							
-					</ul>
-				</div>			
+			<div class="hy-switch-tabs">
+			<ul class="nav nav-tabs">
+				<a class="text-muted pull-right hidden-xs" href="exit.php"><i class="icon iconfont icon-setting"></i> 退出账户</a>
+				<li><a href="?action=cc" title="基本资料">基本资料</a></li>							
+				<li class="active"><a href="?action=favorite"title="我的收藏">我的收藏</a></li>							
+				<li><a href="?action=buy" title="购买记录">购买记录</a></li>
+				<li><a href="?action=videoUpload" title="投稿中心">投稿中心</a></li>		
+				<li><a href="./" title="返回首页">返回首页</a></li>	
+			</ul>
+		</div>			
 				<div class="tab-content">
 					<div class="item tab-pane fade in active">
 						<table class="table">
@@ -703,7 +577,7 @@ EOT;
 		</div>
 	</div>
 	<div class="tabbar visible-xs">
-		<a href="/" class="item">返回首页</a>
+		<a href="./" class="item">返回首页</a>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -783,10 +657,11 @@ elseif($action=='buy')
 	    		<div class="hy-switch-tabs">
 					<ul class="nav nav-tabs">
 						<a class="text-muted pull-right hidden-xs" href="exit.php"><i class="icon iconfont icon-setting"></i> 退出账户</a>
-						<li><a href="?action=cc" title="播放线路">基本资料</a></li>							
+						<li><a href="?action=cc" title="基本资料">基本资料</a></li>							
 						<li><a href="?action=favorite"title="我的收藏">我的收藏</a></li>							
-						<li class="active"><a href="?action=buy" title="购买记录">购买记录</a></li>	
-						<li><a href="/" title="返回首页">返回首页</a></li>	
+						<li class="active"><a href="?action=buy" title="购买记录">购买记录</a></li>
+						<li><a href="?action=videoUpload" title="投稿中心">投稿中心</a></li>		
+						<li><a href="./" title="返回首页">返回首页</a></li>	
 					</ul>
 				</div>			
 				<div class="tab-content">
@@ -862,7 +737,167 @@ EOT;
 		</div>
 	</div>
 	<div class="tabbar visible-xs">
-		<a href="/" class="item">返回首页</a>
+		<a href="./" class="item">返回首页</a>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="hy-footer clearfix">
+				
+				<p class="text-muted">Copyright ©{$year} {$_SERVER['HTTP_HOST']}</p>
+			</div>
+		</div>
+	</div>	
+</body>
+EOT;
+?>
+<script src="js/common.js" type="text/javascript"></script>
+<script>
+function submitForm()
+{
+	$('favform').submit()
+}
+function showpic(event,imgsrc){	
+	var left = event.clientX+document.documentElement.scrollLeft+20;
+	var top = event.clientY+document.documentElement.scrollTop+20;
+	$("preview").style.display="";
+	$("preview").style.left=left+"px";
+	$("preview").style.top=top+"px";
+	$("pic_a1").setAttribute('src',imgsrc);
+}
+function hiddenpic(){
+	$("preview").style.display="none";
+}
+</script>
+<?php
+}
+elseif($action=='videoUpload')
+{
+	$page = $_GET["page"]; 
+	$pcount = 20;
+	$row=$dsql->getOne("select count(id) as dd from sea_favorite where uid=".$uid);
+	$rcount=$row['dd'];
+	$page_count = ceil($rcount/$pcount); 
+	if(empty($_GET['page'])||$_GET['page']<0){ 
+	$page=1; 
+	}else { 
+	$page=$_GET['page']; 
+	}  
+	$select_limit = $pcount; 
+	$select_from = ($page - 1) * $pcount.','; 
+	$pre_page = ($page == 1)? 1 : $page - 1; 
+	$next_page= ($page == $page_count)? $page_count : $page + 1 ; 	
+	$dsql->setQuery("select * from sea_favorite where uid=".$uid." ORDER BY kptime DESC limit ".($page-1)*$pcount.",$pcount");
+	$dsql->Execute('favlist');
+	echo <<<EOT
+	
+	<body>
+	<div class="hy-head-menu">
+		<div class="container">
+		    <div class="row">
+			  	<div class="item">
+				    <div class="logo hidden-xs">
+						<a class="hidden-sm hidden-xs" href="index.php"><img src="pic/member/logo.png" /></a>
+			  			<a class="visible-sm visible-xs" href="index.php"><img src="pic/member/logo_min.png" /></a>											  
+					</div>						
+					<div class="search hidden-xs"> 
+				        <form name="formsearch" id="formsearch" action='search.php' method="post" autocomplete="off">																			
+							<input class="form-control" placeholder="输入影片关键词..." name="searchword" type="text" id="keyword" required="">
+							<input type="submit" id="searchbutton" value="" class="hide">
+							<a href="javascript:" class="btns" title="搜索" onClick="$('#formsearch').submit();"><i class="icon iconfont icon-search"></i></a>
+						</form>
+				    </div>			   
+													 
+			  	</div>							
+		    </div>
+		</div>
+	</div>
+	<div class="container">
+	    <div class="row">	    	
+	    	<div class="hy-member  hy-layout clearfix">
+			<div class="hy-switch-tabs">
+			<ul class="nav nav-tabs">
+				<a class="text-muted pull-right hidden-xs" href="exit.php"><i class="icon iconfont icon-setting"></i> 退出账户</a>
+				<!--<a class="text-muted pull-right hidden-xs" href="./videosup" style="color:green;padding-right:10%;font-size:1.3em;">上传视频</a>--!>
+				
+				<li><a href="?action=cc" title="基本资料">基本资料</a></li>							
+				<li><a href="?action=favorite"title="我的收藏">我的收藏</a></li>							
+				<li><a href="?action=buy" title="购买记录">购买记录</a></li>
+				<li class="active"><a href="?action=videoUpload" title="投稿中心">投稿中心</a></li>		
+				<li><a href="./" title="返回首页">返回首页</a></li>	
+			</ul>
+		</div>			
+				<div class="tab-content">
+					<div class="item tab-pane fade in active">
+						<table class="table">
+							<thead>
+		                    <tr>
+		                        <th class="text-muted"> 视频名称</th>
+		                        <th class="text-muted">投稿时间</th>
+		                        <th class="text-muted hidden-xs">集数</th>
+		                        <th class="text-muted hidden-xs">审核时间</th>
+		                        <th class="text-muted hidden-xs">状态</th>
+		                        <th class="text-muted"> 操作 </th>	
+		                    </tr>
+		                    </thead>
+EOT;
+							while($row=$dsql->getArray('favlist'))
+							{
+								$rs=$dsql->getOne("select v_hit,v_state,v_pic,v_name,v_enname,v_note,v_addtime,tid from sea_data where v_id=".$row['vid']);
+								if(!$rs) {continue;}
+								$hit=$rs['v_hit'];
+								$pic=$rs['v_pic'];
+								$name=$rs['v_name'];
+								$state=$rs['v_state'];
+								$note=$rs['v_note'];
+							
+							echo <<<EOT
+							    <tr>
+									<td>
+										<a href="
+EOT;
+								echo getContentLink($rs['tid'],$row['vid'],"",date('Y-n',$rs['v_addtime']),$rs['v_enname']);
+								echo <<<EOT
+													" target="_blank" >
+EOT;
+								echo $name;
+								echo <<<EOT
+													</a>
+													<td>					
+EOT;
+								echo date('Y-m-d',$row['kptime']);
+								echo <<<EOT
+													</td>
+													<td class="hidden-xs">{$hit}</td>
+							                        <td class="hidden-xs">{$state}</td>
+							                        <td class="hidden-xs">{$note}</td>			
+							                        <td>
+								<a onClick="return(confirm('确定取消收藏该影片？'))" href="?action=cancelfav&id=
+EOT;
+								echo $row['id'];
+		echo <<<EOT
+								">取消收藏</a>				
+								</td>
+		                    </tr>
+EOT;
+												  }			
+							 echo <<<EOT
+	 </table>
+	                     <div class="hy-page clearfix">
+							<ul class="cleafix">
+								<li><a href="?action=favorite&page=1">首页</a> </li>
+								<li><a href="?action=favorite&page={$pre_page}">上一页</a></li>														
+								<li><span class="num">$page/$page_count</span></li>
+								<li><a href="?action=favorite&page={$next_page}">下一页</a></li>
+								<li><a href="?action=favorite&page={$page_count}">尾页</a></li>							
+							</ul>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tabbar visible-xs">
+		<a href="./" class="item">返回首页</a>
 	</div>
 	<div class="container">
 		<div class="row">

@@ -268,13 +268,13 @@
 			<textarea id="editor_id" name="v_content" style="width:700px;height:300px;"><?php echo $v_content;?></textarea>
 			</td>
           </tr>
-          <tr>
+          <tr style="width:100%;position:fixed;bottom:0%;left:1%;background-color:rgba(222, 255, 255, 1)">
             <input type="hidden" name="v_id" value="<?php echo $id;?>">
             <input type="hidden" name="v_back" value="<?php echo $Pirurl;?>" />
             <td height="40" colspan="2" align="left" class="td_border">&nbsp;
              <input type="submit" name="Submit" value="确认保存" class="rb1" onClick="if($('v_name').value.length==0){alert('请填写名称');return false;};if($('v_type').value.length==0){alert('请选择分类');return false;}"/>
               &nbsp;&nbsp;
-              <input type="reset" name="reset" value="清除重置" class="rb1"/>&nbsp;&nbsp;<input type="checkbox" value="1" name="ping" class="checkbox">百度推送更新</td>
+              <input type="reset" name="reset" value="清除重置" class="rb1"/>&nbsp;&nbsp;<input type="checkbox" value="1" name="ping" class="checkbox" checked>百度推送更新</td>
           </tr>
       </table>
         </form>

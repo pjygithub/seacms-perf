@@ -546,3 +546,35 @@ CREATE TABLE IF NOT EXISTS `sea_zyk` (
   PRIMARY KEY (`zid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `user_upload`;
+CREATE TABLE IF NOT EXISTS `user_upload` (
+  `vid` int(8) NOT NULL COMMENT '影片id' AUTO_INCREMENT PRIMARY KEY,
+  `uid` int(6) NOT NULL COMMENT '创建者ID',
+  `vname` varchar(32) NOT NULL COMMENT '影片名称',
+  `vchannel` varchar(32) NOT NULL COMMENT '影片频道',
+  `vlogo` char(255) NOT NULL COMMENT '影片图标',
+  `vtype` varchar(32) NOT NULL COMMENT '影片分类',
+  `vpptimg` char(255) NOT NULL COMMENT '影片幻灯图',
+  `vimg` char(255) NOT NULL COMMENT '影片背景图',
+  `ext` varchar(16) COLLATE 'utf8_general_ci' NULL COMMENT '拓展名',
+  `md5` varchar(32) NOT NULL COMMENT 'MD5值',
+  `mime` varchar(32) NOT NULL COMMENT '文件类型',
+  `name` char(255) NOT NULL COMMENT '文件源名称',
+  `savename` varchar(32) NOT NULL COMMENT '保存文件名名称',
+  `savepath` char(255) NOT NULL COMMENT '保存地址（绝对）',
+  `size` int(16) NOT NULL COMMENT '文件大小',
+  `uri` char(255) NOT NULL COMMENT '保存相对主根路径',
+  `url` char(255) NOT NULL COMMENT '保存自定义域名路径',
+  `vactor` varchar(32) NOT NULL COMMENT '影片主演',
+  `vpublishyear` int(4) NOT NULL COMMENT '影片出版年',
+  `varea` char(6) NOT NULL COMMENT '影片地区',
+  `creatip` varchar(10) NOT NULL COMMENT '创建者IP',
+  `vdirector` varchar(32) NOT NULL COMMENT '影片导演',
+  `vlang` char(6) NOT NULL COMMENT '影片语言',
+  `allowaid` int(6) NOT NULL COMMENT '审核者',
+  `allowip` varchar(10) NOT NULL COMMENT '审核者IP',
+  `staues` int(1) NOT NULL COMMENT '状态：1审核中，2审核通过，3审核不通过',
+  `allowtime` int(12) NOT NULL COMMENT '审核时间',
+  `creatime` int(12) NOT NULL COMMENT '创建时间',
+  `vinfo` char(255) NOT NULL COMMENT '影片介绍'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
